@@ -4,13 +4,12 @@
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: $l-size;
+  padding: $ml-size;
 }
 
 .header__title {
     color: white;
     font-size: 2rem;
-    margin-right: $xl-size;
 }
 
 .links {
