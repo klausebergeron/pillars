@@ -1,0 +1,27 @@
+.bar {
+  background: $off-black;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: $l-size;
+}
+
+.header__title {
+    color: white;
+    font-size: 2rem;
+    margin-right: $xl-size;
+}
+
+.links {
+  display: flex;
+  justify-content: space-around;
+  margin-top:0.2rem;
+}
+
+.link>a {
+  margin: $s-size;
+  color: white;
+  font-size: $m-size;
+  text-decoration: none;
+}
