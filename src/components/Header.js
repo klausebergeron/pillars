@@ -1,49 +1,39 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import Links from './Links';
 
-const Header = (props) => {
-    console.log(props);
-    return (
-      <div className="bar">
-        <div className="header__title">Pillars Funding</div>
-        <Links />
-        <button onClick={Links.toggleLinks} className="hamburger"></button>
-      </div>
-    );
-}
 
-class Links extends React.Component {
+
+export default class Header extends React.Component {
   state = {
-    visible: true
+    toggled: false,
+    width: 0
   };
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth });
+    console.log(window.innerWidth);
+  }
+  componentDidMount = () => {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
   toggleLinks = () => {
     this.setState(prevState => ({
-        visible: !prevState.visible
+        toggled: !prevState.toggled
       }));
-    console.log(visible);
+    console.log(this.toggled);
   };
-    render(){
-      return (
-        <div className="links">
-          <div className="link">
-            <NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink>
-          </div>
-          <div className="link">
-            <NavLink to="/about-us" activeClassName="is-active">About Us</NavLink>
-          </div>
-          <div className="link">
-            <NavLink to="/services" activeClassName="is-active">Services</NavLink>
-          </div>
-          <div className="link">
-            <NavLink to="/contact-us" activeClassName="is-active">Contact Us</NavLink>
-          </div>
-          <div className="link">
-            <NavLink to="/apply-now" activeClassName="is-active">Apply Now</NavLink>
-          </div>
-        </div>
-      );
-    }
-}
-
-
-export default Header;
+  render() {
+    return (
+      <div className="bar container">
+        <div className="header__title">Pillars Funding</div>
+        <button onClick={this.toggleLinks} className="hamburger"><span>  --  </span></button>
+        {((this.state.toggled) && <Links />)}
+        {((window.innerWidth > 680) && <Links />)}
+      </div>
+    );
+  };
+};
