@@ -29,10 +29,9 @@ export default class Header extends React.Component {
   render() {
     return (
       <div className="bar container">
-        <div className="header__title">Pillars Funding</div>
+        <NavLink to="/" className="header__title">Pillars Funding</NavLink>
         <button onClick={this.toggleLinks} className="hamburger"><span>  --  </span></button>
-        {((this.state.toggled) && <Links />)}
-        {((window.innerWidth > 680) && <Links />)}
+        {(((this.state.toggled) || (window.innerWidth > 845) ) && <Links />)}
       </div>
     );
   };
