@@ -4,7 +4,11 @@ import React from 'react';
 const ApplyNowPage = (props) => {
   console.log(props);
   return (
-    <div>From apply now</div>
+    <div className="content__applyNow">
+      <div className="row">
+        
+      </div>
+    </div>
   );
 }
 

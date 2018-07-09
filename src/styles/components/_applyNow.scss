@@ -1,0 +1,9 @@
+.content__applyNow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 160rem;
+  top: 5.4rem;
+  transition: top 300ms ease;
+  z-index: 0;
+}

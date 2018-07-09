@@ -13,7 +13,7 @@ export default class Header extends React.Component {
   };
   updateWindowDimensions = () => {
     this.setState({ width: window.innerWidth });
-    console.log(window.innerWidth);
+    //console.log(window.innerWidth);
   }
   componentDidMount = () => {
     this.updateWindowDimensions();
