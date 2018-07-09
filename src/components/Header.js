@@ -1,48 +1,40 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
+import Links from './Links';
+
+
 
 export default class Header extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.toggle = this.toggle.bind(this);
-    this.state = {
-      collapsed: true
-    };
+  state = {
+    toggled: false,
+    width: 0
+  };
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth });
+    console.log(window.innerWidth);
   }
-  toggle() {
-    this.setState({
-      collapsed: !this.state.collapsed
-    });
+  componentDidMount = () => {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
   }
-
-  render () {
+  componentWillUnmount = () => {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+  toggleLinks = () => {
+    this.setState(prevState => ({
+        toggled: !prevState.toggled
+      }));
+    console.log(this.toggled);
+  };
+  render() {
     return (
-      <div>
-        <Navbar>
-          <NavbarBrand href="/">Pillars Funding</NavbarBrand>
-          <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-            <Collapse isOpen={!this.state.collapsed} navbar>
-              <Nav navbar>
-                <NavItem className="link">
-                  <NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink>
-                </NavItem>
-                <NavItem className="link">
-                  <NavLink to="/about-us" activeClassName="is-active">About Us</NavLink>
-                </NavItem>
-                <NavItem className="link">
-                  <NavLink to="/services" activeClassName="is-active">Services</NavLink>
-                </NavItem>
-                <NavItem className="link">
-                  <NavLink to="/contact-us" activeClassName="is-active">Contact Us</NavLink>
-                </NavItem>
-                <NavItem className="link">
-                  <NavLink to="/apply-now" activeClassName="is-active">Apply Now</NavLink>
-                </NavItem>
-              </Nav>
-            </Collapse>
-        </Navbar>
+      <div className="bar">
+        <div className="bar-container">
+          <NavLink to="/" className="header__title">Pillars Funding</NavLink>
+          <button onClick={this.toggleLinks} className="hamburger"></button>
+          {(((this.state.toggled) || (window.innerWidth > 845) ) && <Links />)}
+        </div>
       </div>
-    )
-  }
-}
+    );
+  };
+};
