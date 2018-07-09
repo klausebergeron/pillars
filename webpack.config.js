@@ -3,8 +3,9 @@
 const path = require('path');
 //node thing
 //properties defined on webpack.js.org
+
 module.exports = {
-  entry: './src/app.js',
+  entry: ['whatwg-fetch', './src/app.js'],
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js'
@@ -20,6 +21,12 @@ module.exports = {
         'style-loader',
         'css-loader',
         'sass-loader'
+      ]
+    }, {
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      use: [
+        'url-loader?limit=10000',
+        'img-loader'
       ]
     }]
   },

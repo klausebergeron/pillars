@@ -7,6 +7,8 @@ import ApplyNowPage from '../components/ApplyNowPage';
 import PillarsHomePage from '../components/PillarsHomePage';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
+import DropboxOAuth from '../components/DropboxOAuth';
 
 
 const AppRouter = () => (
@@ -19,8 +21,10 @@ const AppRouter = () => (
         <Route path="/about-us" component={AboutUsPage} />
         <Route path="/services" component={ServicesPage} />
         <Route path="/contact-us" component={ContactUs} />
+        <Route path="/dropbox-oauth" component={DropboxOAuth} />
         <Route component={NotFoundPage} />
       </Switch>
+      <Footer />
     </div>
   </BrowserRouter>
 )

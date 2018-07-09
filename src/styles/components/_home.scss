@@ -1,0 +1,71 @@
+.spacer {
+  display: block;
+  height: 12rem;
+  background: $off-black;
+  opacity: 1;
+  z-index: 1;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: fit-content;
+  width: 100%;
+  z-index: 1;
+  background-size: cover;
+}
+.info-block {
+  align-content: center;
+}
+
+.block-2 {
+  width: 50%;
+  padding: $xl-size $m-size;
+}
+
+.content__home {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 160rem;
+  top: 5.4rem;
+  z-index: 0;
+}
+
+.planet-img {
+  background-image: url("../imgs/back_top.png");
+}
+
+.video {
+  display: block;
+  min-width: 90%;
+  min-height: 260px;
+  margin: auto;
+}
+
+.video-box {
+  width: 80%;
+  border-top: 5px solid $off-black;
+  background-color: $off-white;
+  padding: 4% 0;
+  box-shadow: 0 0 5px 5px;
+  margin-left: $l-size;
+}
+
+* html .back-top {
+   position:absolute;
+   top:expression(((back-top.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+
+@media (max-width: 845px) {
+  .row {
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-direction: column;
+  }
+  .block-2 {
+    width: 100%;
+  }
+}

@@ -16,7 +16,7 @@ const Links = (props) => (
             <NavLink to="/contact-us" activeClassName="is-active">Contact Us</NavLink>
           </div>
           <div className="link">
-            <NavLink to="/apply-now" activeClassName="is-active">Apply Now</NavLink>
+            <NavLink to="/apply-now" activeClassName="is-active">APPLY NOW</NavLink>
           </div>
         </div>
 

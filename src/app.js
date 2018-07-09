@@ -1,17 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter from './routers/AppRouter';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem } from 'reactstrap';
+import Dropbox from 'dropbox';
+import DropboxTeam from 'dropbox';
+import 'whatwg-fetch';
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 

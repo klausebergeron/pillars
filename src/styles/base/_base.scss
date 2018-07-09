@@ -16,6 +16,18 @@ button:disabled {
   cursor: default;
 }
 
+button:focus {
+  outline: 0;
+}
+
 .is-active {
   font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
 }
