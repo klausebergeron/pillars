@@ -52,20 +52,37 @@
   padding:0;
 }
 
+.drop-enter {
+  transform: scaleY(0);
+}
+.drop-enter.drop-enter-active {
+  transform: scaleY(1);
+  transition: transform 300ms ease-in;
+}
+.drop-exit {
+  transform: scaleY(1);
+}
+.drop-exit.drop-exit-active {
+  transform: scaleY(0);
+  transition: transform 300ms ease-in;
+}
+
 @media (max-width: 845px) {
   .links {
+    position: fixed;
+    z-index: 1;
+    top: 5.3rem;
+    background-color: #111;
+    background-image: linear-gradient(#444, #111);
     flex-direction: column;
     align-items: center;
     width: 100%;
-    animation-name: dropDown;
-    animation-duration: .1s;
     transform-origin: top;
   }
   .link {
     padding: $m-size 0 $m-size 0;
     width: 100%;
     text-align: center;
-    transition: all .5s;
   }
   .link:not(:last-child) {
       border-right: none;

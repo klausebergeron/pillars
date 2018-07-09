@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-const Links = (props) => (
+const Links = () => (
         <div className="links">
           <div className="link">
             <NavLink to="/" activeClassName="is-active" exact={true}>Home</NavLink>
@@ -19,7 +19,6 @@ const Links = (props) => (
             <NavLink to="/apply-now" activeClassName="is-active">APPLY NOW</NavLink>
           </div>
         </div>
-
 );
 
 export default Links;
