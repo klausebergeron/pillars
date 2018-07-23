@@ -4,11 +4,12 @@ import ContactUs from '../components/ContactUs';
 import AboutUsPage from '../components/AboutUsPage';
 import ServicesPage from '../components/ServicesPage';
 import ApplyNowPage from '../components/ApplyNowPage';
-import PillarsHomePage from '../components/PillarsHomePage';
+import PillarsHomePage from '../components/Home/PillarsHomePage';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import DropboxOAuth from '../components/DropboxOAuth';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 
 const AppRouter = () => (

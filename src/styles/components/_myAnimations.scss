@@ -1,0 +1,129 @@
+@keyframes headerCycle {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  85% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes headerReflectionCycle {
+  0% {
+    opacity: 0;
+    transform: translateY(30%) scaleY(-1) rotateX(-40deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%) scaleY(-1) rotateX(-40deg);
+  }
+  85% {
+    transform: scale(1, -1) rotateX(-40deg);
+  }
+  100% {
+    transform: scale(0, -1) rotateX(-40deg);
+  }
+}
+
+@keyframes applyNowEntry {
+  0% {
+    transform: scaleX(0);
+  }
+  75% {
+    transform: scaleX(0);
+  }
+  90% {
+      transform: scaleX(1);
+    }
+  100% {
+      transform: scaleX(1);
+    }
+}
+
+@keyframes anchorToRight {
+  from {
+    transform: translateX(50%);
+    right: 40%;
+  }
+  to {
+    transform: translateX(0%);
+    right: 0%;
+  }
+}
+
+@keyframes anchorToCenter {
+  from {
+    transform: translateX(50%);
+    right: 0%;
+  }
+  to {
+    transform: translateX(0%);
+    right: 40%;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(400%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+@keyframes fadeInFromAbove {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dropDown {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fade-top {
+  0% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

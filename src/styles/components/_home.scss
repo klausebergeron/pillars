@@ -1,3 +1,5 @@
+@import "./myAnimations.scss";
+
 .spacer {
   display: block;
   height: 12rem;
@@ -9,33 +11,57 @@
 
 .apply-btn {
   position: fixed;
-  float: right;
+  display: block;
+  margin:auto;
+  right: 0;
     height: 6rem;
-    width: 30rem;
+    width: 25rem;
     background: white;
     border: 3px solid black;
-    border-radius: 2rem;
     box-shadow: 0 0 2rem 0.5rem white;
     padding: 3rem 1rem 0rem 1rem;
     text-align: center;
     text-decoration: none;
     font-size: 20pt;
-    right: 4rem;
-    top: 9rem;
-    animation: applyNowEntry 4s;
-    transform-origin: left;
+    z-index: 2;
+    top: 12rem;
+    animation: slideInFromRight 1s ease 2.5s backwards;
 }
 
 .financial-solutions {
   font-weight: 300;
   font-family: 'Montserrat', sans-serif;
-  -webkit-box-reflect: below 0 -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 1)));
-  animation: headerCycle 4s;
-  transform-origin: right;
+  //-webkit-box-reflect: below 0 -webkit-gradient(linear, right top, right bottom, from(transparent), to(rgba(255, 255, 255, 1)));
+  margin-top: 10rem;
+  animation: headerCycle 3s;
+  -webkit-animation: headerCycle 3s;
+  margin-bottom: 0;
+}
+.financial-solutions-reflect {
+  font-weight: 300;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 7rem;
+  -moz-transform: scaleY(-1);
+       -o-transform: scaleY(-1);
+       -webkit-transform: scaleY(-1);
+       transform: scaleY(-1);
+	-webkit-mask-image: -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(20%, transparent), to(rgba(0, 0, 0, 0.4)));
+  animation: headerReflectionCycle 3s;
+  -webkit-animation: headerReflectionCycle 3s;
+  margin-top: 0;
 }
 
+//for internet explorer:
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   .financial-solutions-reflect {
+        display: none;
+   }
+   .financial-solutions {
+     animation: headerCycle 3s forwards;
+   }
+}
 h1.financial-solutions {
-    font-size: 50pt;
+    font-size: 7rem;
 }
 h4.financial-solutions {
     font-weight: 400;
@@ -84,10 +110,19 @@ h4.financial-solutions {
    top:expression(((back-top.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
 
+.enter-up {
+  //top: 2rem;
+  animation: enter-up 1s ease 3s backwards;
+  //transform: 3s ease;
+}
+
+.gone {
+  display: none;
+}
+
 @media (max-width: 845px) {
   .row {
-    background-size: contain;
-    background-repeat: no-repeat;
+    background: none;
     flex-direction: column;
     align-items: center;
   }
@@ -96,31 +131,11 @@ h4.financial-solutions {
   }
 }
 
-@keyframes headerCycle {
-  0% {
-    opacity: 0;
-    transform: translateY(-10%);
+@media (max-width: 700px) {
+  .financial-solutions-reflect {
+    font-size: 3rem;
   }
-  40% {
-    opacity: 1;
-    transform: translateY(0%);
+  h1.financial-solutions {
+      font-size: 3rem;
   }
-  80% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaleX(0);
-  }
-}
-
-@keyframes applyNowEntry {
-  0% {
-    transform: scaleX(0);
-  }
-  80% {
-    transform: scaleX(0);
-  }
-  100% {
-      transform: scaleX(1);
-    }
 }
